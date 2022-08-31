@@ -1,34 +1,88 @@
 export const userColumns = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'firstName', headerName: 'First name', width: 130 },
-    { field: 'lastName', headerName: 'Last name', width: 130 },
+    { field: 'id', headerName: 'ID USER', width: 70 },
+    { field: 'iduser', headerName: 'ID BUDGET', width: 130 },
+    { field: 'intituleBudget', headerName: 'Intitulé Budget', width: 130 },
+    { field: 'dateD', headerName: 'Date Debut',width: 90},
+    { field: 'dateF', headerName: 'Date Fin', type: 'date',width: 90},
     {
-      field: 'age',
-      headerName: 'Age',
-      type: 'number',
-      width: 90,
-    },
-    {
-      field: 'fullName',
-      headerName: 'Full name',
-      description: 'This column has a value getter and is not sortable.',
-      sortable: false,
-      width: 160,
-      valueGetter: (params) =>
-        `${params.row.firstName || ''} ${params.row.lastName || ''}`,
-    },
+        field: "status", 
+        headerName: "Status", 
+        width: 100,   
+        renderCell: (params) => {
+            return (
+            <div className={`cellWithStatus ${params.row.status}`}>
+                {params.row.status}
+            </div>
+            );
+        }
+    }
   ];
   
+
   export const userRows = [
-    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-    { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-    { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-    { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-    { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-    { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+    {   id: 1,
+        iduser: 1,
+        intituleBudget: 'Budget 10', 
+        dateD: "10/04/2022",
+        dateF: "10/12/2022",
+        status: "pending"
+    },
+    {   id: 2,
+        iduser: 2,
+        intituleBudget: 'Lannister', 
+        dateD: "12/04/2022",
+        dateF: "12/12/2022",
+        status: "active"
+    },
+    {   id: 3,
+        iduser: 3,
+        intituleBudget: 'Lannister', 
+        dateD: "15/04/2022",
+        dateF: "15/12/2022",
+        status: "passive" 
+    },
+    {   id: 4,
+        iduser: 4,
+        intituleBudget: 'Stark',
+        dateD: "19/04/2022",
+        dateF: "19/12/2022",
+        status: "pending" 
+    },
+    {   id: 5,
+        iduser: 5,
+        intituleBudget: 'Targaryen', 
+        dateD: "21/04/2022",
+        dateF: "21/12/2022",
+        status: "active" 
+    },
+    {   id: 6,
+        iduser: 6,
+        intituleBudget: 'Melisandre', 
+        dateD: "23/04/2022",
+        dateF: "23/12/2022",
+        status: "passive"
+    },
+    {   id: 7,
+        iduser: 7,
+        intituleBudget: 'Clifford', 
+        dateD: "26/04/2022",
+        dateF: "26/12/2022",
+        status: "passive"
+    },
+    {   id: 8,
+        iduser: 8,
+        intituleBudget: 'Frances', 
+        dateD: "28/04/2022",
+        dateF: "28/12/2022",
+        status: "pending"
+    },
+    {   id: 9,
+        iduser: 9,
+        intituleBudget: 'Roxie',
+        dateD: "30/04/2022",
+        dateF: "30/12/2022",
+        status: "active"
+    },
   ];
 
 /*export const userColumns = [

@@ -29,8 +29,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/">
+          <Route path="login" element={<Login />} />
             <Route index element={<Home />}/> 
-            <Route path="login" element={<Login />} />
             <Route path="logout" element={<Logout />} /> 
             <Route path="stat" element={<Stat />} />
             <Route path="notif" element={<Notif />} />

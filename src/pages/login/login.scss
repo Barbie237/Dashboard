@@ -1,6 +1,80 @@
-form{
-    
-    .auth{
-            font-size: 14px;
+.login{
+    width: 100%;
+    display: flex;
+
+    .newContainer{
+        flex: 10;
+        
+        .body{
+        -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+        box-shadow:  2px 4px 10px 1px rgba(201, 201, 201, 0.47);    
+        padding: 20px;
+        margin: 20px;
+       
+
+        h1{
+            color: lightgray;
+            font-size: 40px;
+            text-align: center;
+            align-items: center;
+            
+        }
+
+            section{
+                height: 80vh;
+                background-image: url('../../img/Vv.jpg');
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+
+
+                form{
+                width: 500px;
+                background-color: rgba(0, 0, 0, 0.4);
+                padding: 10px;
+                box-sizing: border-box;
+                border-radius: 30px;
+                flex-wrap: wrap;
+                margin: auto;
+                height: 450px;
+
+                    
+                    label{
+                        display: block;
+                        margin: 10px auto;
+                        text-align: center;
+                        color: #ffffff;
+                    }
+
+                    input{
+                        display: block;
+                        margin: 10px auto;
+                        width: 100%;
+                        padding: 5px;
+                        border: none;
+                        border-bottom: 1px solid gray;
+                        text-align: center;
+                        color: #ffffff;
+                    }
+
+                button{
+                    width: 150px;
+                    padding: 10px;
+                    border: none;
+                    background-color: orange;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                    margin-top: 10px;
+                    text-align: center;
+                    align-items: center;
+                }
+
+            
+        }  
+    }
+
+        }
     }
 }

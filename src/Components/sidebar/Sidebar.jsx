@@ -22,6 +22,7 @@ const Sidebar = () => {
     <div className='sidebar '>
         <div className="top">
         <Link to="/" style={{textDecoration:"none"}}>
+        <img src="Vlogo.jpg" alt="logo"/>
           <span className="logo"> Vallée Verte Admin </span>
         </Link>
           

@@ -1,18 +1,94 @@
 import "./login.scss";
 import {useForm} from "react-hook-form";
-import {passwordRegex, emailRegex,} from "../../common/regex";
+import { emailRegex,} from "../../common/regex";
+import Navbar from "../../Components/navbar/Navbar";
+import {useNavigate} from "react-router-dom";
 
 const Login = () => {
   //val par défaut(useForm())
   const {register, handleSubmit, formState:{errors}} = useForm();
   const onclick = (data) => {
       console.log(data);
-      
+      login();
   }
-  
+  //fake
+  const navigate = useNavigate();
+  const fakeDb = [
+    {
+        "username": "Barbara1",
+        "email": "annebarbaratebu@gmail.com",
+        "password": "Teb's_237",
+        "role": "Admin"
+        
+    },
+    {
+        "username": "pintor",
+        "email": "pintor@gmail.com",
+        "password": "pinT@r2.ç",
+        "role": "Admin"
+    },
+    {
+        "username": "Jo",
+        "email": "jo@gmail.com",
+        "password": "Jo1@h.&1",
+        "role": "gestionnaire"
+        
+    },
+    {
+        "username": "marIej1",
+        "email": "mariej@gmail.com",
+        "password": "maRieJ2.&",
+        "role": "membre"
+    },
+    {
+        "username": "mamour1A",
+        "email": "mamour@gmail.com",
+        "password": "password",
+        "role": "membre"
+    },
+    {
+        "username": "papou",
+        "email": "papou@gmail.com",
+        "password": "papou2.0",
+        "role": "membre"
+    },
+    {
+        "username": "coco1",
+        "email": "coco@gmail.com",
+        "password": "Coco&1A",
+        "role": "membre"
+    }
+]
+
+function login() {
+  const fakeData ={
+    "username": "",
+    "email": "",
+    "password": "",
+    "role":""
+  }
+  console.log("login");
+    const loggedUser = fakeDb.find(item => item = fakeData);
+    if (loggedUser) {
+        console.log("login ok");
+    localStorage.setItem("user", JSON.stringify(loggedUser))
+    navigate("/", {replace:true})
+    } else{
+        console.log("login no");
+    console.log("No user with provided credentials where founded");
+    }
+}
+    
   return (
-    <form>
-      <label> Username : </label>
+  <div className="login">  
+  <div className="newContainer"> 
+    <Navbar />
+    <div className="body">
+            
+      <section>
+      <form>
+      <h1> Authentification </h1>
+      <label> {errors.username?errors.username.message:"Username :" }  </label>
       <input {...register("username", 
       {required:"Le nom utilisateur est recquis!", 
 
@@ -20,7 +96,7 @@ const Login = () => {
       //...recopier une valeur actuelle en mémoire et j'ajoute à ca la nouvelle val
       placeholder="Anna1"  
       /> 
-      <label> Email : </label>
+      <label> {errors.email?errors.email.message:"Email :" } </label>
       <input 
       placeholder="anne@gmail.com"
       {...register("email",
@@ -29,19 +105,30 @@ const Login = () => {
       }
       )}
       />
-      <label> Password : </label>
-      <input {...register("email",
-      {required: "L'adresse Email est obligatoire!",
-      pattern:{value:passwordRegex, message:"Veuillez entrer un mot de passe"}
+      <label> {errors.password?errors.password.message:"Password :" } </label>
+      <input {...register("password",
+      {required: "Le mot de passe est obligatoire!"
+      }) 
+      }
+      /><label> {errors.role?errors.role.message:"Role :" } </label>
+      <input {...register("Role",
+      {required: "Le role est obligatoire!"
       }) 
       }
       />
-      <button onClick={handleSubmit(onclick)}
-      type="submit"
-      > Connexion </button>
-    </form>
-    
+      <button 
+      onClick={handleSubmit(onclick)}
+        type="submit"> 
+       Connexion 
+       </button>
+      </form>
+      </section>      
+   </div>
+    </div>
+  </div> 
   )
 }
 
 export default Login
+
+
