@@ -22,11 +22,11 @@
 
             section{
                 height: 80vh;
-                background-image: url('../../img/Vv.jpg');
                 background-size: cover;
                 display: flex;
                 justify-content: center;
                 align-content: center;
+
 
 
                 form{
@@ -77,4 +77,9 @@
 
         }
     }
+}
+
+.field{
+    display: flex;
+    gap: 1em;
 }

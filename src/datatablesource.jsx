@@ -1,84 +1,67 @@
-
-
 export const userColumns = [
-    { 
-        field: "id", 
-        headerName: "ID User", 
-        width: 100
-    }, 
     {
-    field:"user", 
-    headerName:"Username", 
-    width: 200, 
-    renderCell: (params) => {
-        return (
-            <div className="cellWithImg">
-                <img className="cellImg" src={params.row.img} alt="avatar"/>
-                {params.row.username} 
-            </div>
-        );
+        field: "id",
+        headerName: "ID User",
+        width: 75
+    },
+    {
+        field: "user",
+        headerName: "Username",
+        width: 150,
+        renderCell: (params) => {
+            return (
+                <div className="cellWithImg">
+                    <img className="cellImg" src={params.row.img} alt="avatar"/>
+                    {params.row.username}
+                </div>
+            );
         }
     },
-    { 
-    field: "nomPrenom", 
-    headerName: "Nom et Prenom", 
-    width: 300
+    {
+        field: "nomPrenom",
+        headerName: "Nom et Prenom",
+        width: 150
     },
     {
-    field: "dateNaiss", 
-    headerName: "Date de Naissance", 
-    width: 150
-    },
-     {
-    field: "sexe", 
-    headerName: "Sexe", 
-    width: 90   
-    }, 
-    {
-    field: "tel", 
-    headerName: "Téléphone", 
-    type:"number",
-    width: 100   
+        field: "dateNaiss",
+        headerName: "Date de Naissance",
+        width: 150
     },
     {
-    field: "adresse", 
-    headerName: "Adresse", 
-    width: 200   
+        field: "sexe",
+        headerName: "Sexe",
+        width: 50
     },
     {
-    field: "email", 
-    headerName: "Email", 
-    width: 200
+        field: "tel",
+        headerName: "Téléphone",
+        type: "number",
+        width: 125
     },
     {
-    field: "role", 
-    headerName: "Role", 
-    width: 180   
+        field: "adresse",
+        headerName: "Adresse",
+        width: 200
     },
     {
-    field: "password", 
-    headerName: "Password", 
-    width: 160   
-    },
-    {
-    field: "status", 
-    headerName: "Status", 
-    width: 100,   
-    renderCell: (params) => {
-        return (
-        <div className={`cellWithStatus ${params.row.status}`}>
-            {params.row.status}
-        </div>
-        );
+        field: "status",
+        headerName: "Status",
+        width: 100,
+        renderCell: (params) => {
+            return (
+                <div className={`cellWithStatus ${params.row.status}`}>
+                    {params.row.status}
+                </div>
+            );
+        }
     }
-}
 ];
 
 
-export const userRows = [
+export let userRows = [
     {id: 1, 
     username:"Pintor1", 
-    img:"img1.jpg",
+    img:"/img/img1.jpg",
     nomPrenom:"pintor Paul", 
     dateNaiss:"09/05/2000", 
     sexe:"M", 
@@ -92,7 +75,7 @@ export const userRows = [
     {
     id: 2, 
     username:"Joo1", 
-    img:"img1.jpg",
+    img:"/img/img1.jpg",
     nomPrenom:"Joo Joleen", 
     dateNaiss:"23/12/1998", 
     sexe:"F", 
@@ -106,7 +89,7 @@ export const userRows = [
     {
     id: 3, 
     username:"Anne1", 
-    img:"img1.jpg",
+    img:"/img/img1.jpg",
     nomPrenom:"Anne Barbara", 
     dateNaiss:"23/09/2001", 
     sexe:"F", 
@@ -120,7 +103,7 @@ export const userRows = [
     {
     id: 4, 
     username:"youyou_1", 
-    img:"img1.jpg",
+    img:"/img/img1.jpg",
     nomPrenom:"Youyou Tetena", 
     dateNaiss:"22/02/2008", 
     sexe:"F", 
@@ -134,7 +117,7 @@ export const userRows = [
     {
     id: 5, 
     username:"tinTo", 
-    img:"img1.jpg",
+    img:"/img/img1.jpg",
     nomPrenom:"Tinto Claude", 
     dateNaiss:"20/01/2002", 
     sexe:"M", 
@@ -146,3 +129,19 @@ export const userRows = [
     status:"pending"
     }  
 ];
+
+export const addUser = (data) => {
+    userRows = [{
+        id: userRows.length + 1,
+        username: data.username,
+        img: data.img,
+        nomPrenom: data.nomPrenom,
+        dateNaiss: data.dateNaiss,
+        sexe: data.sexe,
+        tel: data.tel,
+        adresse: data.adresse,
+        status: data.status
+    },...userRows];
+};
+
+export const findUserById = id => userRows.find(user => user.id === id);

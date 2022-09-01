@@ -3,8 +3,14 @@ import Navbar from "../../Components/navbar/Navbar";
 import Chart from "../../Components/chart/Chart";
 import List from "../../Components/table/Table";
 import "./single.scss";
+import {useParams} from "react-router-dom";
+import {findUserById} from "../../datatablesource";
 
 const Single = () => {
+    const {userId} = useParams();
+    const user = findUserById(parseInt(userId))
+
+    console.log(user)
     return (
         <div className="single">
             <Sidebar/>
@@ -16,28 +22,28 @@ const Single = () => {
                      <h1 className="title">Information</h1>
                      <div className="item">
                      <img 
-                         src="./img1.jpg"
+                         src={user.img}
                          alt=""
                          className="itemImg"
                      />
                      <div className="details">
-                        <h1 className="itemTitle"> Anne Barbara </h1>
+                        <h1 className="itemTitle"> {user.nomPrenom} </h1>
                         <div className="detailItem"> 
                             <span className="itemKey">Email:</span>
-                            <span className="itemValue">annebarbara@gmail.com</span>
+                            <span className="itemValue">{user.email}</span>
                         </div>         
                         <div className="detailItem"> 
                             <span className="itemKey">Phone:</span>
-                            <span className="itemValue">+237 655654312</span>
+                            <span className="itemValue">{user.tel}</span>
                         </div>         
                         <div className="detailItem"> 
                             <span className="itemKey">Address:</span>
-                            <span className="itemValue">Tsinga Village. Yaoundé</span>
+                            <span className="itemValue">{user.adresse}</span>
                         </div>
-                        <div className="detailItem"> 
-                            <span className="itemKey">Country:</span>
-                            <span className="itemValue">Cameroon</span>
-                        </div>
+                        {/*<div className="detailItem"> */}
+                        {/*    <span className="itemKey">Country:</span>*/}
+                        {/*    <span className="itemValue">Cameroon</span>*/}
+                        {/*</div>*/}
                      </div>
                      </div>
                      </div>

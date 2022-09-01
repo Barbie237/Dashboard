@@ -1,59 +1,71 @@
 export const userInputs = [
-    { 
-        iduser: 1, 
-        label: "Username", 
+    {
+        iduser: 1,
+        name: "userName",
+        label: "Username",
         type: "text",
-        placeholder: "anne1"
-    }, 
-    {
-    iduser:2, 
-    label:"Nom et prenom", 
-    type: "text",
-    placeholder:"Anne Barbara"
-    },
-    { 
-    iduser: 3, 
-    label: "Date de Naissance", 
-    type: "text",
-    placeholder:"12/10/2001"
-    },
-     { 
-    id: 4, 
-    label: "Sexe", 
-    type: "text",
-    placeholder:"F"
+        placeholder: "anne1",
+        required:"Veuillez saisir le nom"
     },
     {
-    id: 5, 
-    label: "Téléphone", 
-    type: "text",
-    placeholder: "+237 655053199"  
+        iduser: 2,
+        name: "firstnameAndLastName",
+        label: "Nom et prenom",
+        type: "text",
+        placeholder: "Anne Barbara",
+
     },
     {
-    id: 6, 
-    label: "Adresse", 
-    type: "text",
-    placeholder:"Tsinga, Yaoundé"   
+        iduser: 3,
+        name: "birthday",
+        label: "Date de Naissance",
+        type: "date",
+        placeholder: "12/10/2001"
     },
     {
-    id: 7, 
-    label: "Email", 
-    type: "email",
-    placeholder:"annebarbara@gmail.com"  
-    }, 
+        id: 4,
+        label: "Sexe",
+        name: "sex",
+        type: "text",
+        placeholder: "F"
+    },
     {
-    id: 8, 
-    label: "Role", 
-    type: "text",
-    placeholder:"Membre"   
-    }, 
+        id: 5,
+        name: "phone",
+        label: "Téléphone",
+        type: "text",
+        placeholder: "+237 655053199"
+    },
     {
-    id: 9, 
-    label: "Password", 
-    type: "text"   
+        id: 6,
+        name: "address",
+        label: "Adresse",
+        type: "text",
+        placeholder: "Tsinga, Yaoundé"
+    },
+    {
+        id: 7,
+        name: "email",
+        label: "Email",
+        type: "email",
+        placeholder: "annebarbara@gmail.com"
+    },
+    {
+        id: 8,
+        name: "role",
+        label: "Role",
+        type: "text",
+        placeholder: "Membre"
+    },
+    {
+        id: 9,
+        name: "passrword",
+        label: "Password",
+        type: "password"
     }
 
 ];
+
 
 export const budgetInputs = [
   {
