@@ -75,7 +75,7 @@ export let userRows = [
     {
     id: 2, 
     username:"Joo1", 
-    img:"/img/img1.jpg",
+    img:"/img/img2.jpg",
     nomPrenom:"Joo Joleen", 
     dateNaiss:"23/12/1998", 
     sexe:"F", 
@@ -89,7 +89,7 @@ export let userRows = [
     {
     id: 3, 
     username:"Anne1", 
-    img:"/img/img1.jpg",
+    img:"/img/img3.jpg",
     nomPrenom:"Anne Barbara", 
     dateNaiss:"23/09/2001", 
     sexe:"F", 
@@ -103,7 +103,7 @@ export let userRows = [
     {
     id: 4, 
     username:"youyou_1", 
-    img:"/img/img1.jpg",
+    img:"/img/img4.jpg",
     nomPrenom:"Youyou Tetena", 
     dateNaiss:"22/02/2008", 
     sexe:"F", 

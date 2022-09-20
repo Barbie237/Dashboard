@@ -1,7 +1,6 @@
 import "./login.scss";
 import {useForm} from "react-hook-form";
 import {emailRegex,} from "../../common/regex";
-import Navbar from "../../Components/navbar/Navbar";
 import {useNavigate} from "react-router-dom";
 
 const Login = () => {
@@ -82,7 +81,7 @@ const Login = () => {
                         <form>
                             <h1> Authentification </h1>
 
-                            <label> {errors.username ? errors.username.message : "Username :"}  </label>
+                            {/* <label> {errors.username ? errors.username.message : "Username :"}  </label>
                             <input {...register("username",
                                 {
                                     required: "Le nom utilisateur est recquis!",
@@ -90,13 +89,13 @@ const Login = () => {
                                 })}
                                 //...recopier une valeur actuelle en mémoire et j'ajoute à ca la nouvelle val
                                    placeholder="Anna1"
-                            />
+                            /> */}
                             <label> {errors.email ? errors.email.message : "Email :"} </label>
                             <input
                                 placeholder="anne@gmail.com"
                                 {...register("email",
                                     {
-                                        required: "L'adresse Email est obligatoire!",
+                                        required: "L'adresse Email est obligatoire!", style:{color:"red"},
                                         pattern: {
                                             value: emailRegex,
                                             message: "Veuillez entrer une adresse email valide"
